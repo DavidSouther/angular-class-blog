@@ -3,6 +3,18 @@ describe('Blog', function(){
     var component;
 
     beforeEach(module('blog.list.component'));
+
+    beforeEach(module(function($provide){
+      $provide.value('Post', {
+        query: function(){
+          return [
+            { title: 'Hello', content: 'The First Post'},
+            { title: 'Things!', content: 'We have things to say'}
+          ];
+        }
+      });
+    }));
+
     beforeEach(function(){
       component = render('<blog-list></blog-list>');
     });

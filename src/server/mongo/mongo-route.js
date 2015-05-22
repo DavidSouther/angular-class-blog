@@ -21,13 +21,13 @@ module.exports = function(server, config){
   var mongo_root_path = config.find('mongo.rest.path', '/api');
 
 
-  server.all(mongo_root_path + '/*', function(request, response, next){
-    if(request.cookies.session === '1234'){ // Look up in session DB
-      next();
-    } else {
-      response.status(403).send({notLoggedIn: 1});
-    }
-  });
+  // server.all(mongo_root_path + '/*', function(request, response, next){
+  //   if(request.cookies.session === '1234'){ // Look up in session DB
+  //     next();
+  //   } else {
+  //     response.status(403).send({notLoggedIn: 1});
+  //   }
+  // });
 
 
   var connection = {

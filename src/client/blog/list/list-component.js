@@ -1,8 +1,7 @@
-function BlogListController(){
-  this.posts = [
-    { id: 1, title: 'Hello', content: 'The First Post'},
-    { id: 2, title: 'Things!', content: 'We have things to say'}
-  ];
+BlogListController.$inject = ['Post'];
+function BlogListController(Post){
+  this.posts = Post.query();
+
 }
 
 function BlogListComponent(){
@@ -18,5 +17,7 @@ BlogListComponent.factory = function(){
 };
 
 angular.module('blog.list.component', [
+  'blog.post.service',
   'blog.list.template'
-]).directive('blogList', BlogListComponent.factory);
+]).directive('blogList', BlogListComponent.factory)
+;
