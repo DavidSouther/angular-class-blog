@@ -3,7 +3,7 @@ angular.module('blog', [
   'blog.list.component'
 ]).config(['$routeProvider', function($routeProvider){
   $routeProvider.when('/list', {
-    template: "<blog-list></blog-list>"
+    template: '<blog-list></blog-list>'
   })
   .otherwise({
     redirectTo: '/list'

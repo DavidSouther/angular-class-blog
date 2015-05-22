@@ -1,7 +1,7 @@
 function BlogListController(){
   this.posts = [
-    { id: 1, title: "Hello", content: "The First Post"},
-    { id: 2, title: "Things!", content: "We have things to say"}
+    { id: 1, title: 'Hello', content: 'The First Post'},
+    { id: 2, title: 'Things!', content: 'We have things to say'}
   ];
 }
 
